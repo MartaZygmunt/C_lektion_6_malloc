@@ -22,7 +22,7 @@ int main(void) {
     }
 
     if (type == 'i' || type == 'I') {
-        int *arr= malloc(n * sizeof(int));
+        int *arr= calloc(n, sizeof(int));
         if (arr == NULL) {
             fprintf(stderr, "Memory allocation failed.\n");
             return 1;
@@ -40,7 +40,7 @@ int main(void) {
                 
         }
 
-        printf("Values: ");
+        printf("Current array : ");
         for (size_t i = 0; i < n; ++i) {
             printf("%d ", arr[i]);
         }
@@ -49,7 +49,7 @@ int main(void) {
         free(arr);
 
     } else {
-        float *arr = malloc(n * sizeof(float));
+        float *arr = calloc(n, sizeof(float));
         if (arr == NULL) {
             fprintf(stderr, "Memory allocation failed.\n");
             return 1;
@@ -66,7 +66,7 @@ int main(void) {
 
         }
 
-        printf("Values: ");
+        printf("Current array : ");
         for (size_t i = 0; i < n; ++i) {
             printf("%.2f ", arr[i]);
         }
